@@ -4,6 +4,13 @@ import os
 
 
 def getfoldersize(start_path):
+    """
+    This function will return the size of the given folder.
+    Example: getfoldersize('C:/Users/Foobar/Documents')
+    :param start_path: The string (str) variable of the selected folder's path.
+    :return: Size of the folder with 'B/KB/MB/GB/TB' suffix.
+    """
+
     total_size = 0
     total_size_twodecimal = ''
 
@@ -36,6 +43,13 @@ def getfoldersize(start_path):
 
 
 def getfilescount(start_path):
+    """
+    This function will return the number of the files in the given folder.
+    Example: getfilescount('C:/Users/Foobar/Documents')
+    :param start_path: The string (str) variable of the selected folder's path.
+    :return: The number of the files in the given folder with 'file(s)' suffix.
+    """
+
     count = 0
     for f in os.listdir(start_path):
         if os.path.isfile(os.path.join(start_path, f)):
@@ -45,6 +59,13 @@ def getfilescount(start_path):
 
 
 def getfolderscount(start_path):
+    """
+    This function will return the number of the subfolders in the given folder.
+    Example: getfolderscount('C:/Users/Foobar/Documents')
+    :param start_path: The string (str) variable of the selected folder's path.
+    :return: The number of the subfolders in the given folder with 'folder(s)' suffix.
+    """
+
     foldercount_array = [os.path.join(start_path, o) for o in os.listdir(start_path) if
                          os.path.isdir(os.path.join(start_path, o))]
 
