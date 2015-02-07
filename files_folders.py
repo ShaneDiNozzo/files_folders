@@ -12,7 +12,7 @@ def getfoldersize(start_path):
     This function will return the size of the given folder.
     Example: getfoldersize('C:/Users/Foobar/Documents')
     :param start_path: The string (str) variable of the selected folder's path.
-    :return: Size of the folder with 'B/KB/MB/GB/TB' suffix.
+    :return: Size of the folder with 'B/kB/MB/GB/TB' suffix.
     """
 
     total_size = 0
@@ -27,7 +27,7 @@ def getfoldersize(start_path):
         total_size_twodecimal = '%.2f' % total_size + ' B'
     elif 4 <= len(str(total_size)) <= 6:
         total_size_in_kb = total_size / 1024
-        total_size_twodecimal = '%.2f' % total_size_in_kb + ' KB'
+        total_size_twodecimal = '%.2f' % total_size_in_kb + ' kB'
     elif 7 <= len(str(total_size)) <= 9:
         mb = 1024 * 1024
         total_size_in_mb = total_size / mb
